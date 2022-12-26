@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+    <style>
+        body {
+            background-color: rgb(39, 39, 39);
+        }
+        .caixa {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 100px;
+            border-radius: 15px;
+            color: #fff;
+            font-family: 'Ubuntu', sans-serif;
+        }
+        .caixa h1 {
+            text-align: center;
+        }
+        .caixa input {
+            outline: none;
+            padding: 15px;
+            border: none;
+            font-size: 15px;
+            border-radius: 10px;
+            color: #ff0036;
+            font-family: 'Ubuntu', sans-serif;
+            margin: 10px;
+            width: 100%;
+        }
+        .caixa button {
+            padding: 15px;
+            border: none;
+            font-size: 15px;
+            border-radius: 10px;
+            color: black;
+            font-family: 'Ubuntu', sans-serif;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .resultado {
+            margin-top: 60px;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 100px;
+            border-radius: 15px;
+            color: #fff;
+            font-family: 'Ubuntu', sans-serif;
+        }
+    </style>
+<body>
+    <div class="caixa">
+            <h1>Calculadora</h1>
+            <input type="number" placeholder="Investimento Inicial" name="investimento_inicial" id="investimento_inicial">
+            <input type="number" placeholder="Investimento Mensal" name="investimento_mensal" id="investimento_mensal">
+            <input type="number" placeholder="Tempo (Meses)" name="tempo" id="tempo">
+            <input type="number" placeholder="Juros (Mensal)" name="juros" id="juros">
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <div class="resultado" id="resultado">
+        <h1>Resultado:</h1>
+        <p>Valor total final: R$ 0,00</p>
+        <p>Valor total investido: R$ 0,00</p>
+        <p>Valor total em juros: R$ 0,00</p>
+    </div>
+
+    <script>
+        function calcular() {
+            var investimento_inicial = document.getElementById('investimento_inicial')
+            var investimento_mensal = document.getElementById('investimento_mensal')
+            var tempo = document.getElementById('tempo')
+            var valjuros = document.getElementById('juros')
+            var juros = Number(valjuros.value)/100
+            var res = window.document.getElementById('resultado')
+            var n1 = Number(investimento_inicial.value)
+            var n2 = Number(investimento_mensal.value)
+            var n3 = Number(tempo.value)
+            var etapa_1 = (1 + juros) ** n3
+            var etapa_2 = (etapa_1 - 1) / juros
+            var etapa_3 = 1 + juros
+            var resultado = n1 + n2 * (etapa_2 * etapa_3)
+            var investido = n1 + (n2 * n3) 
+            var totalinvestido = resultado - investido
+            res.innerHTML = `
+<h1>Resultado:</h1>
+<p>Valor total final: ${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
+<p>Valor total investido:  ${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
+<p>Valor total em juros: ${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
+`
+        }
+    </script>
+</body>
+</html>
