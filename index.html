@@ -1,1 +1,27 @@
-Hello World
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="caixa">
+            <h1>Calculadora</h1>
+            <input type="number" placeholder="Investimento Inicial" name="investimento_inicial" id="investimento_inicial">
+            <input type="number" placeholder="Investimento Mensal" name="investimento_mensal" id="investimento_mensal">
+            <input type="number" placeholder="Tempo (Meses)" name="tempo" id="tempo">
+            <input type="number" placeholder="Juros (Mensal)" name="juros" id="juros">
+        <button onclick="calcular()">Calcular</button>
+    </div>
+    <div class="resultado" id="resultado">
+        <h1>Resultado:</h1>
+        <p>Valor total final: R$ 0,00</p>
+        <p>Valor total investido: R$ 0,00</p>
+        <p>Valor total em juros: R$ 0,00</p>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
