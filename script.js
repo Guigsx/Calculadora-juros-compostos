@@ -1,10 +1,24 @@
+const openModalButton = document.querySelector("#open-modal");
+const closeModalButton = document.querySelector("#close-modal");
+const modal = document.querySelector("#modal");
+const fade = document.querySelector("#fade");
+
+const toggleModal = () => {
+  modal.classList.toggle("hide");
+  fade.classList.toggle("hide");
+}
+
+[openModalButton, closeModalButton, fade].forEach((el) => {
+  el.addEventListener("click", () => toggleModal());
+})
+
 function calcular() {
     var investimento_inicial = document.getElementById('investimento_inicial')
     var investimento_mensal = document.getElementById('investimento_mensal')
     var tempo = document.getElementById('tempo')
     var valjuros = document.getElementById('juros')
     var juros = Number(valjuros.value)/100
-    var res = window.document.getElementById('resultado')
+    var res = window.document.getElementById('modal-body')
     var n1 = Number(investimento_inicial.value)
     var n2 = Number(investimento_mensal.value)
     var n3 = Number(tempo.value)
@@ -15,9 +29,7 @@ function calcular() {
     var investido = n1 + (n2 * n3) 
     var totalinvestido = resultado - investido
     res.innerHTML = `
-<h1>Resultado:</h1>
-<p>Valor total final: ${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
-<p>Valor total investido:  ${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
-<p>Valor total em juros: ${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</p>
-`
+    <a1>Valor total final<br><aa1>${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa1></a1>
+    <a2>Valor total investido<br><aa2>${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa2></a2>
+    <a3>Valor em juros<br></aa3><aa3>${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa3></a3>`
 }
