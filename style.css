@@ -104,9 +104,10 @@ input[type=number] {
 }
 .modal-body a1, a2, a3 {
     text-align: center;
-    border:2px solid rgba(37, 37, 37, 0.418);
+    border:2px solid rgba(37, 37, 37, 0.541);
     padding: 3vh;
     white-space: nowrap;
+    color: rgba(37, 37, 37, 0.726);
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
 }
@@ -114,7 +115,7 @@ input[type=number] {
     color: rgb(102, 189, 102);
 }
 .modal-body aa2 {
-    color: rgb(228, 63, 63);
+    color: rgba(37, 37, 37, 0.726);
 }
 .modal-body aa3 {
     color: rgb(68, 0, 255);
