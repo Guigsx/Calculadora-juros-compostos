@@ -32,10 +32,11 @@ function calcular() {
     <a1>Valor total final<br><aa1>${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa1></a1>
     <a2>Valor total investido<br><aa2>${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa2></a2>
     <a3>Valor em juros<br></aa3><aa3>${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</aa3></a3>`
+    
+    
+    
     const ctx = document.getElementById('myChart')
-  
-    let v1 = investido
-    let v2 = totalinvestido
+
     new Chart(ctx, {
       type: 'pie',
       data: {
@@ -45,7 +46,7 @@ function calcular() {
         ],
         datasets: [{
           label: 'Valor',
-          data: [v1, v2],
+          data: [investido.toFixed(2), totalinvestido.toFixed(2)],
           backgroundColor: [
       'rgb(228, 63, 63)',
       'rgb(68, 0, 255)'
