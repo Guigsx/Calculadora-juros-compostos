@@ -28,26 +28,45 @@ function calcular() {
         var caixaTerceira = document.querySelector('.caixa-3')
         caixaSegunda.classList.add('esconder')
         caixaTerceira.classList.remove('esconder')
-        var res = document.querySelector('.caixa-3')
+        var res_1 = document.querySelector('.valor-1')
+        var res_2 =  document.querySelector('.valor-2')
+        var res_3 =  document.querySelector('.valor-3')
 
-        var investimento_inicial = document.getElementById('investimento_inicial')
-        var investimento_mensal = document.getElementById('investimento_mensal')
-        var tempo = document.getElementById('tempo')
-        var valjuros = document.getElementById('juros')
-        var juros = Number(valjuros.value) / 100
-        var n1 = Number(investimento_inicial.value)
-        var n2 = Number(investimento_mensal.value)
-        var n3 = Number(tempo.value)
-        var etapa_1 = (1 + juros) ** n3
-        var etapa_2 = (etapa_1 - 1) / juros
-        var etapa_3 = 1 + juros
-        var resultado = n1 + n2 * (etapa_2 * etapa_3)
-        var investido = n1 + (n2 * n3)
-        var totalinvestido = resultado - investido
-        res.innerHTML = `<p>${resultado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-        <p>${investido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-        <p>${totalinvestido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</p>
-        `
+        var juros = Number(document.getElementById('juros').value) / 100;
+        var n1 = Number(document.getElementById('investimento_inicial').value);
+        var n2 = Number(document.getElementById('investimento_mensal').value);
+        var n3 = Number(document.getElementById('tempo').value);
+        var etapa_1 = (1 + juros) ** n3;
+        var resultado = n1 + n2 * ((etapa_1 - 1) / juros * (1 + juros));
+        var investido = n1 + (n2 * n3);
+        var totalinvestido = resultado - investido;
+        
+        res_1.innerHTML = `<h1>Valor total final</h1>
+        <h2>${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`;
+        res_2.innerHTML = `<h1>Valor total investido</h1>
+        <h2>${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`;
+        res_3.innerHTML = `<h1>Total em juros</h1>
+        <h2>${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`
+
+        const ctx = document.getElementById('grafico')
+
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+              labels: [
+                'Investido',
+                'Juros'
+              ],
+              datasets: [{
+                label: 'Valor',
+                data: [investido.toFixed(2), totalinvestido.toFixed(2)],
+                backgroundColor: [
+            'blue',
+            'green'
+          ],
+              }],
+            }
+          })
     } else {
         alert('Por favor, preencha todos os campos.');
     }
