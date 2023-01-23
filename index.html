@@ -1,43 +1,40 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora Juros Compostos</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora juros compostos</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <div class="caixa">
-        <header>
-            <h1>Calculadora</h1>
-        </header>
-        <input type="number" placeholder="Investimento Inicial" name="investimento_inicial" id="investimento_inicial" required="">
-        <input type="number" placeholder="Investimento Mensal" name="investimento_mensal" id="investimento_mensal" required="">
-        <input type="number" placeholder="Tempo (Meses)" name="tempo" id="tempo" required="">
-        <input type="number" placeholder="Juros (Mensal)" name="juros" id="juros" required="">
-        <button id="open-modal" onclick="calcular()">Calcular</button> 
+  
+  <div class="caixa-1">
+    <h1>Cálculo de Juros Compostos</h1>
+    <p>Os juros compostos crescem de forma exponencial, pois sua base de cálculo é sempre em cima do montante anterior. Faça esse cálculo financeiro de forma simples utilizando nossa calculadora!</p>
+    <button id="start-button" class="start-button">Começar</button>
+  </div>
+  <div id="hidden-content" style="display: none;">
+    <!-- Conteúdo HTML e CSS aqui -->
+    <div class="caixa-2">
+      <h1>Calculadora juros compostos</h1>
+      <input class="input-1" type="number" placeholder="Investimento Inicial" name="investimento_inicial" id="investimento_inicial">
+      <input class="input-2" type="number" placeholder="Investimento Mensal" name="investimento_mensal" id="investimento_mensal">
+      <input class="input-3" type="number" placeholder="Tempo (Meses)" name="tempo" id="tempo">
+      <input class="input-4" type="number" placeholder="Juros (Mensal)" name="juros" id="juros"><br>
+      <button id="calcular" onclick="calcular()">Calcular</button>
     </div>
 
-    <div class="modal">
-    <div id="fade" class="hide"></div>
-    <div id="modal" class="hide">
-      <div class="modal-header">
-        <h2>Resultado</h2>
-        <div id="modal-body" class="modal-body">
-            <a1>Valor total final<br><aa1>R$0,00</aa1></a1>
-            <a2>Valor total investido<br></aa2>R$0,00</aa2></a2>
-            <a3>Valor em juros<br></aa3>R$0,00</aa3></a3>
-          </div>
-          <div class="grafico">
-            <canvas id="myChart"></canvas>
-          </div>
-        <button id="close-modal">Fechar</button>
-      </div>
-      </div>
+    <div class="caixa-3">
+      <p>0</p>
+      <p>0</p>
+      <p>0</p>
     </div>
-</div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
+  </div>
+
+<script src="script.js"></script>
 </body>
+
 </html>
