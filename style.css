@@ -29,8 +29,6 @@ button.start-button {
 
 button.start-button:hover {
     border-radius: 20px;
-    width: 220px;
-    height: 60px;
 }
 
 .caixa-1 p {
@@ -40,10 +38,6 @@ button.start-button:hover {
 .caixa-1 h1 {
     font-size: 30px;
     transition: all 0.5s;
-}
-
-.caixa-1 h1:hover {
-    font-size: 34px;
 }
 
 
@@ -114,4 +108,44 @@ input[type=number] {
     margin-top: 50px;
     text-align: center;
     border-radius: 20px;
+}
+
+.valores {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.valor-1,
+.valor-2,
+.valor-3 {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 30%;
+    margin: 5px;
+}
+
+.valor-1 h1,
+.valor-2 h1,
+.valor-3 h1 {
+    font-size: 15px;
+    font-weight: 100;
+}
+
+.valor-2 h2 {
+    color: blue;
+}
+
+.valor-3 h2 {
+    color: green;
+}
+
+.grafico {
+    margin-top: 20px;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 25%;
+    left: 32%;
 }
