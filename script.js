@@ -4,7 +4,7 @@ botaoIniciar.addEventListener("click", function () {
     conteudoEscondido.style.display = "block";
     var caixaInicial = document.querySelector('.caixa-1');
     var caixaSegunda = document.querySelector('.caixa-2');
-    var caixaTerceira = document.querySelector('.caixa-3')
+    var caixaTerceira = document.querySelector('.caixa-3');
     caixaInicial.classList.add("esconder");
     caixaTerceira.classList.add("esconder");
     caixaSegunda.classList.remove("esconder");
@@ -29,45 +29,59 @@ function calcular() {
         caixaSegunda.classList.add('esconder')
         caixaTerceira.classList.remove('esconder')
         var res_1 = document.querySelector('.valor-1')
-        var res_2 =  document.querySelector('.valor-2')
-        var res_3 =  document.querySelector('.valor-3')
+        var res_2 = document.querySelector('.valor-2')
+        var res_3 = document.querySelector('.valor-3')
 
         var juros = Number(document.getElementById('juros').value) / 100;
         var n1 = Number(document.getElementById('investimento_inicial').value);
         var n2 = Number(document.getElementById('investimento_mensal').value);
         var n3 = Number(document.getElementById('tempo').value);
         var etapa_1 = (1 + juros) ** n3;
-        var resultado = n1 + n2 * ((etapa_1 - 1) / juros * (1 + juros));
-        var investido = n1 + (n2 * n3);
-        var totalinvestido = resultado - investido;
-        
+        let resultado = n1 + n2 * ((etapa_1 - 1) / juros * (1 + juros));
+        let investido = n1 + (n2 * n3);
+        let totalinvestido = resultado - investido;
+
         res_1.innerHTML = `<h1>Valor total final</h1>
-        <h2>${resultado.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`;
+        <h2>${resultado.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h2>`;
         res_2.innerHTML = `<h1>Valor total investido</h1>
-        <h2>${investido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`;
+        <h2>${investido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h2>`;
         res_3.innerHTML = `<h1>Total em juros</h1>
-        <h2>${totalinvestido.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}</h2>`
+        <h2>${totalinvestido.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h2>`
 
         const ctx = document.getElementById('grafico')
-
         new Chart(ctx, {
             type: 'pie',
             data: {
-              labels: [
-                'Investido',
-                'Juros'
-              ],
-              datasets: [{
-                label: 'Valor',
-                data: [investido.toFixed(2), totalinvestido.toFixed(2)],
-                backgroundColor: [
-            'blue',
-            'green'
-          ],
-              }],
+                labels: [
+                    'Investido',
+                    'Juros'
+                ],
+                datasets: [{
+                    label: 'Valor',
+                    data: [investido.toFixed(2), totalinvestido.toFixed(2)],
+                    backgroundColor: [
+                        'blue',
+                        'green'
+                    ],
+                }],
             }
-          })
+        })
     } else {
         alert('Por favor, preencha todos os campos.');
     }
 }
+
+var outro = document.getElementById("outro");
+outro.addEventListener("click", function () {
+    
+    /*var caixaSegunda = document.querySelector('.caixa-2')
+    var caixaTerceira = document.querySelector('.caixa-3')
+    caixaTerceira.classList.add('esconder')
+    caixaSegunda.classList.remove('esconder')
+    var inputs = document.querySelectorAll('.input-1, .input-2, .input-3, .input-4')
+    inputs.forEach(input => {
+        input.value = "";
+      });*/
+
+      location.reload()
+})
