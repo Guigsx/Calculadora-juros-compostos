@@ -27,6 +27,20 @@ button.start-button {
     transition: all 0.5s;
 }
 
+.start-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    left: 0;
+    top: 120%;
+    transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+    filter: blur(64px);
+    opacity: 0.9;
+}
+
 button.start-button:hover {
     border-radius: 20px;
 }
@@ -101,13 +115,26 @@ input[type=number] {
 
 .caixa-3 {
     width: 800px;
-    height: 500px;
+    height: 560px;
     background-color: rgb(48, 48, 48);
     position: relative;
     left: 20%;
     margin-top: 50px;
     text-align: center;
     border-radius: 20px;
+}
+
+button.outro {
+    position: relative;
+    top: 70%;
+    left: -37%;
+    width: 150px;
+    height: 35px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
 }
 
 .valores {
