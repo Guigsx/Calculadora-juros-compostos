@@ -139,7 +139,6 @@ button.outro {
 
 .valores {
     display: flex;
-    flex-wrap: nowrap;
     justify-content: center;
 }
 
@@ -156,7 +155,7 @@ button.outro {
 .valor-1 h1,
 .valor-2 h1,
 .valor-3 h1 {
-    font-size: 15px;
+    font-size: 100%;
     font-weight: 100;
 }
 
@@ -175,4 +174,91 @@ button.outro {
     position: absolute;
     top: 25%;
     left: 32%;
+}
+
+@media (max-width: 500px) {
+    body {
+        background: rgb(20, 20, 20);
+        font-family: 'Ubuntu', sans-serif;
+    }
+
+    .caixa-1 {
+        width: 350px;
+        position: relative;
+        left: 10px;
+        top: 150px;
+        text-align: center;
+        color: white;
+    }
+
+    .caixa-2 {
+        width: 350px;
+        height: 610px;
+        background-color: rgb(48, 48, 48);
+        position: relative;
+        left: 3%;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .caixa-2 button {
+        position: relative;
+        top: 50px;
+        width: 320px;
+        height: 60px;
+    }
+
+    .caixa-3 {
+        width: 360px;
+        height: 600px;
+        position: relative;
+        left: 2%;
+    }
+
+    .valores {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .valor-1,
+    .valor-2,
+    .valor-3 {
+        height: 50px;
+        width: 95%;
+        font-size: 90%;
+    }
+
+    .valor-1 h1 {
+        position: relative;
+        left: -30%;
+    }
+
+    .valor-2 h1 {
+        position: relative;
+        left: -26%;
+    }
+
+    .valor-3 h1 {
+        position: relative;
+        left: -31%;
+    }
+
+    .valor-1 h2,
+    .valor-2 h2,
+    .valor-3 h2 {
+        position: relative;
+        left: 20%;
+        top: -65%;
+    }
+
+    .grafico {
+        position: relative;
+        left: 10%;
+    }
+
+    button.outro {
+        position: relative;
+        left: 1%;
+        top: 5%;
+    }
 }
