@@ -27,10 +27,22 @@ button.start-button {
     transition: all 0.5s;
 }
 
+.start-button::before {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    left: 0;
+    top: 120%;
+    transform: perspective(64px) rotateX(40deg) scale(1, 0.35);
+    filter: blur(64px);
+    opacity: 0.9;
+}
+
 button.start-button:hover {
     border-radius: 20px;
-    width: 220px;
-    height: 60px;
 }
 
 .caixa-1 p {
@@ -40,10 +52,6 @@ button.start-button:hover {
 .caixa-1 h1 {
     font-size: 30px;
     transition: all 0.5s;
-}
-
-.caixa-1 h1:hover {
-    font-size: 34px;
 }
 
 
@@ -107,11 +115,63 @@ input[type=number] {
 
 .caixa-3 {
     width: 800px;
-    height: 500px;
+    height: 560px;
     background-color: rgb(48, 48, 48);
     position: relative;
     left: 20%;
     margin-top: 50px;
     text-align: center;
     border-radius: 20px;
+}
+
+button.outro {
+    position: relative;
+    top: 70%;
+    left: -37%;
+    width: 150px;
+    height: 35px;
+    white-space: nowrap;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.valores {
+    display: flex;
+    justify-content: center;
+}
+
+.valor-1,
+.valor-2,
+.valor-3 {
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: 2px solid black;
+    width: 30%;
+    margin: 5px;
+}
+
+.valor-1 h1,
+.valor-2 h1,
+.valor-3 h1 {
+    font-size: 100%;
+    font-weight: 100;
+}
+
+.valor-2 h2 {
+    color: blue;
+}
+
+.valor-3 h2 {
+    color: green;
+}
+
+.grafico {
+    margin-top: 20px;
+    width: 400px;
+    height: 300px;
+    position: absolute;
+    top: 25%;
+    left: 32%;
 }
