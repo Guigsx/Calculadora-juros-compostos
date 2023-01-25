@@ -105,7 +105,8 @@ input[type=number] {
     border: none;
     border-radius: 5px;
     transition: all 0.5s;
-    color: rgba(0, 0, 0, 0.63);
+    color: white;
+    background-color: rgba(0, 0, 0, 0.63);
 }
 
 .caixa-2 button:hover {
