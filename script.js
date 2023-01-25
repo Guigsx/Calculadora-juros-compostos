@@ -10,6 +10,9 @@ botaoIniciar.addEventListener("click", function () {
     caixaSegunda.classList.remove("esconder");
 })
 
+
+
+
 function validateInputs() {
     var inputs = document.querySelectorAll('.input-1, .input-2, .input-3, .input-4');
     var inputsCompleted = true;
@@ -73,7 +76,7 @@ function calcular() {
 
 var outro = document.getElementById("outro");
 outro.addEventListener("click", function () {
-    
+
     /*var caixaSegunda = document.querySelector('.caixa-2')
     var caixaTerceira = document.querySelector('.caixa-3')
     caixaTerceira.classList.add('esconder')
@@ -83,5 +86,5 @@ outro.addEventListener("click", function () {
         input.value = "";
       });*/
 
-      location.reload()
-    })
+    location.reload()
+})
