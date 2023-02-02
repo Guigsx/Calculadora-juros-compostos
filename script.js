@@ -1,20 +1,12 @@
-var botaoIniciar = document.getElementById("start-button");
-botaoIniciar.addEventListener("click", function () {
-    var conteudoEscondido = document.getElementById("hidden-content");
-    conteudoEscondido.style.display = "block";
-    var caixaInicial = document.querySelector('.caixa-1');
-    var caixaSegunda = document.querySelector('.caixa-2');
-    var caixaTerceira = document.querySelector('.caixa-3');
-    caixaInicial.classList.add("esconder");
-    caixaTerceira.classList.add("esconder");
-    caixaSegunda.classList.remove("esconder");
-})
+const caixaSegunda = document.querySelector('.caixa-2');
+const caixaTerceira = document.querySelector('.caixa-3');
+const outro = document.getElementById("outro");
+const inputs = document.querySelectorAll('.input-1, .input-2, .input-3, .input-4');
 
-
-
+caixaSegunda.classList.remove('esconder');
+caixaTerceira.classList.add('esconder');
 
 function validateInputs() {
-    var inputs = document.querySelectorAll('.input-1, .input-2, .input-3, .input-4');
     var inputsCompleted = true;
     inputs.forEach(function (input) {
         if (!input.value) {
@@ -26,9 +18,6 @@ function validateInputs() {
 
 function calcular() {
     if (validateInputs()) {
-        // código a ser executado se todos os inputs estiverem preenchidos
-        var caixaSegunda = document.querySelector('.caixa-2');
-        var caixaTerceira = document.querySelector('.caixa-3')
         caixaSegunda.classList.add('esconder')
         caixaTerceira.classList.remove('esconder')
         var res_1 = document.querySelector('.valor-1')
@@ -74,17 +63,6 @@ function calcular() {
     }
 }
 
-var outro = document.getElementById("outro");
 outro.addEventListener("click", function () {
-
-    /*var caixaSegunda = document.querySelector('.caixa-2')
-    var caixaTerceira = document.querySelector('.caixa-3')
-    caixaTerceira.classList.add('esconder')
-    caixaSegunda.classList.remove('esconder')
-    var inputs = document.querySelectorAll('.input-1, .input-2, .input-3, .input-4')
-    inputs.forEach(input => {
-        input.value = "";
-      });*/
-
     location.reload()
 })

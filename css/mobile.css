@@ -4,14 +4,6 @@
         font-family: 'Ubuntu', sans-serif;
     }
 
-    .caixa-1 {
-        width: 100%;
-        position: relative;
-        left: 1%;
-        text-align: center;
-        color: white;
-    }
-
     .caixa-2 {
         width: 95%;
         height: 610px;
