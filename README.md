@@ -13,5 +13,7 @@
 	<p>A calculadora irá então mostrar o valor final do investimento após o período informado, levando em consideração os aportes mensais e a taxa de juros compostos.</p>
     <img src="./imgs/resultado.png" alt="banner">
 
-<h3>Observações</h3>
-<p>Este é um dos meus primeiros projetos de desenvolvimento, e por isso, pode conter muitos erros e commits. Quando comecei a trabalhar neste projeto, estava aprendendo a utilizar novas tecnologias e técnicas de desenvolvimento, o que pode ter levado a alguns erros e problemas no código.</p>
+<h3>Comentário</h3>
+<p>Este é um dos meus primeiros projetos de desenvolvimento, e por isso, pode conter muitos erros e commits. Quando comecei a trabalhar neste projeto, estava aprendendo a utilizar novas tecnologias e técnicas de desenvolvimento, o que pode ter levado a alguns erros e problemas no código.
+<br>
+No entanto, mantive todos os commits anteriores, mesmo aqueles que continham erros, como uma forma de documentar o meu progresso e evolução no desenvolvimento do projeto. Espero que isso possa ajudar outras pessoas que estejam iniciando na área a entender que erros e ajustes são uma parte natural do processo de desenvolvimento, e que é possível aprender e evoluir a partir deles."</p>
