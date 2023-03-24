@@ -6,7 +6,7 @@
 	<ol>
 		<li>Informe o valor inicial do investimento;</li>
 		<li>Informe o valor dos aportes mensais;</li>
-		<li>Informe a taxa de juros anual;</li>
+		<li>Informe a taxa de juros mensal;</li>
 		<li>Informe o período de investimento em anos;</li>
 		<li>Clique no botão "Calcular".</li>
 	</ol>
