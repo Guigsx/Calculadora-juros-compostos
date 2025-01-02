@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora juros compostos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="caixa-2">
+    <h1>Calculadora juros compostos</h1>
+    <input class="input-1" type="number" placeholder="Investimento Inicial" name="investimento_inicial"
+      id="investimento_inicial">
+    <input class="input-2" type="number" placeholder="Investimento Mensal" name="investimento_mensal"
+      id="investimento_mensal">
+    <input class="input-3" type="number" placeholder="Tempo (Meses)" name="tempo" id="tempo">
+    <input class="input-4" type="number" placeholder="Juros (Mensal)" name="juros" id="juros"><br>
+    <button id="calcular" onclick="calcular()">Calcular</button>
+  </div>
+
+  <div class="caixa-3">
+    <div class="valores">
+      <div class="valor-1">
+        <h1>Valor total final</h1>
+        <h2>R$ 0,00</h2>
+      </div>
+      <div class="valor-2">
+        <h1>Valor total investido</h1>
+        <h2>R$ 0,00</h2>
+      </div>
+      <div class="valor-3">
+        <h1>Total em juros</h1>
+        <h2>R$ 0,00</h2>
+      </div>
+      <div class="grafico">
+        <canvas id="grafico"></canvas>
+      </div>
+    </div>
+    <button id="outro" class="outro">Fazer outro cálculo</button>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
